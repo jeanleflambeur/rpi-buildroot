@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# setup an ad-hoc network
+#
+
+
+ip link set wlan0 down
+iwconfig wlan0 mode ad-hoc
+iwconfig wlan0 channel 6
+iwconfig wlan0 essid 'silkopter'
+iwconfig wlan0 key 3141592653
+ip addr add 10.10.10.10/24 dev wlan0
+ip link set wlan0 up
+
+
+
